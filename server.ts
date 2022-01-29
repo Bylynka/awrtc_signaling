@@ -131,26 +131,26 @@ if (config.httpConfig) {
 
 
 
-if (config.httpsConfig)
-{
-    httpsServer = https.createServer({
-        key: fs.readFileSync(path.resolve(config.httpsConfig.ssl_key_file)),
-        cert: fs.readFileSync(path.resolve(config.httpsConfig.ssl_cert_file))
-    }, defaultRequest);
+//if (config.httpsConfig)
+//{
+ //   httpsServer = https.createServer({
+   //     key: fs.readFileSync(path.resolve(config.httpsConfig.ssl_key_file)),
+     //   cert: fs.readFileSync(path.resolve(config.httpsConfig.ssl_cert_file))
+    //}, defaultRequest);
     
-    let options = {
-        port: config.httpsConfig.port,
-        host: config.httpsConfig.host
-    }
-    httpsServer.listen(options, function () {
-        console.log('secure websockets/https listening on ', httpsServer.address());
-        });
+    //let options = {
+      //  port: config.httpsConfig.port,
+        //host: config.httpsConfig.host
+    //}
+    //httpsServer.listen(options, function () {
+      //  console.log('secure websockets/https listening on ', httpsServer.address());
+        //});
 
-    var webSocketSecure = new ws.Server( {
-        server: httpsServer,
+    //var webSocketSecure = new ws.Server( {
+      //  server: httpsServer,
         //path: app.path,
-        maxPayload: config.maxPayload,
-        perMessageDeflate: false
-    }); 
-    signalingServer.addSocketServer(webSocketSecure, config.apps as wns.IAppConfig[]);
-}
+   //     maxPayload: config.maxPayload,
+     //   perMessageDeflate: false
+   // }); 
+   // signalingServer.addSocketServer(webSocketSecure, config.apps as wns.IAppConfig[]);
+//}
