@@ -37,6 +37,8 @@ import serveStatic = require('serve-static');
 var finalhandler = require('finalhandler');
 
 var config = require("./config.json");
+var path = require('path');
+
 
 
 
@@ -132,8 +134,8 @@ if (config.httpConfig) {
 if (config.httpsConfig)
 {
     httpsServer = https.createServer({
-        key: fs.readFileSync(config.httpsConfig.ssl_key_file),
-        cert: fs.readFileSync(config.httpsConfig.ssl_cert_file)
+        key: fs.readFileSync(path.resolve(config.httpsConfig.ssl_key_file)),
+        cert: fs.readFileSync(path.resolve(config.httpsConfig.ssl_cert_file))
     }, defaultRequest);
     
     let options = {
