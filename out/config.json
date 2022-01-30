@@ -7,7 +7,7 @@
     },
     "httpsConfig":
     {
-        "port": 443,
+        "port": 12777,
         "host": "0.0.0.0",
         "ssl_key_file": "ssl.key",
         "ssl_cert_file": "ssl.crt"
