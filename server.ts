@@ -148,7 +148,7 @@ if (config.httpsConfig)
 
     var webSocketSecure = new ws.Server( {
        server: httpsServer,
-        path: app.path,
+//         path: app.path,
        maxPayload: config.maxPayload,
        perMessageDeflate: false
    }); 
