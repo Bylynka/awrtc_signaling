@@ -134,8 +134,8 @@ if (config.httpConfig) {
 if (config.httpsConfig)
 {
    httpsServer = https.createServer({
-       key: fs.readFileSync(__dirname + config.httpsConfig.ssl_key_file),
-       cert: fs.readFileSync(__dirname + config.httpsConfig.ssl_cert_file)
+       key: fs.readFileSync(__dirname + '/' + config.httpsConfig.ssl_key_file),
+       cert: fs.readFileSync(__dirname + '/' + config.httpsConfig.ssl_cert_file)
     }, defaultRequest);
     
     let options = {
